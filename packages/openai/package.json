@@ -1,0 +1,61 @@
+{
+  "name": "@glot-manager/openai",
+  "version": "0.1.0",
+  "description": "OpenAI translation provider for Glot Manager — glossary- and context-aware machine translation with strict JSON-schema output.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "glot-manager-dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=glot-manager-dev --test \"test/*.test.ts\""
+  },
+  "dependencies": {
+    "@glot-manager/core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "openai": ">=4.0.0 <7"
+  },
+  "keywords": [
+    "i18n",
+    "translation",
+    "openai",
+    "gpt",
+    "llm",
+    "machine-translation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonjoker/glot-manager.git",
+    "directory": "packages/openai"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

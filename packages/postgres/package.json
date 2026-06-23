@@ -1,0 +1,66 @@
+{
+  "name": "@glot-manager/postgres",
+  "version": "0.1.0",
+  "description": "Postgres storage adapter for Glot Manager — implements the TranslationStore interface against any node-postgres-compatible client.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "glot-manager-dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=glot-manager-dev --test \"test/*.test.ts\""
+  },
+  "dependencies": {
+    "@glot-manager/core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "pg": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "pg": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "i18n",
+    "translation",
+    "postgres",
+    "postgresql",
+    "pg",
+    "storage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonjoker/glot-manager.git",
+    "directory": "packages/postgres"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

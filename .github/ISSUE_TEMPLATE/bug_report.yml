@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a problem with Glot
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Steps to reproduce, ideally a minimal repo or code snippet.
+    validations:
+      required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: Which package(s)?
+      multiple: true
+      options:
+        - '@glot-manager/core'
+        - '@glot-manager/react'
+        - '@glot-manager/server'
+        - '@glot-manager/anthropic'
+        - '@glot-manager/openai'
+        - '@glot-manager/postgres'
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Glot version, Node version, framework (Next.js/Remix/…) + version.
+    validations:
+      required: true

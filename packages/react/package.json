@@ -1,0 +1,62 @@
+{
+  "name": "@glot-manager/react",
+  "version": "0.1.0",
+  "description": "React client for Glot Manager: a one-line provider, the <T> component/useT hook, and an admin-only in-context translation editor overlay (code-split, zero-cost in production).",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "glot-manager-dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@glot-manager/core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "keywords": [
+    "i18n",
+    "translation",
+    "react",
+    "in-context",
+    "editor",
+    "next.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonjoker/glot-manager.git",
+    "directory": "packages/react"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

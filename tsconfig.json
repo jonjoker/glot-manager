@@ -1,0 +1,10 @@
+{
+  "//": "Root config for editors/tooling. Each package compiles via its own tsconfig.",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"]
+  },
+  "include": ["*.ts", "*.js", "packages/*/src", "packages/*/test"]
+}

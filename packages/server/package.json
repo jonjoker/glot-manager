@@ -1,0 +1,91 @@
+{
+  "name": "@glot-manager/server",
+  "version": "0.1.0",
+  "description": "Framework-agnostic Web-Fetch request handler for Glot Manager: auth-gated CRUD, LLM auto-translate proxy, and adapters for Next.js, Node, and Express.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "glot-manager-dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./next": {
+      "glot-manager-dev": "./src/adapters/next.ts",
+      "import": {
+        "types": "./dist/adapters/next.d.ts",
+        "default": "./dist/adapters/next.js"
+      },
+      "require": {
+        "types": "./dist/adapters/next.d.cts",
+        "default": "./dist/adapters/next.cjs"
+      }
+    },
+    "./node": {
+      "glot-manager-dev": "./src/adapters/node.ts",
+      "import": {
+        "types": "./dist/adapters/node.d.ts",
+        "default": "./dist/adapters/node.js"
+      },
+      "require": {
+        "types": "./dist/adapters/node.d.cts",
+        "default": "./dist/adapters/node.cjs"
+      }
+    },
+    "./express": {
+      "glot-manager-dev": "./src/adapters/express.ts",
+      "import": {
+        "types": "./dist/adapters/express.d.ts",
+        "default": "./dist/adapters/express.js"
+      },
+      "require": {
+        "types": "./dist/adapters/express.d.cts",
+        "default": "./dist/adapters/express.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=glot-manager-dev --test \"test/*.test.ts\""
+  },
+  "dependencies": {
+    "@glot-manager/core": "^0.1.0"
+  },
+  "keywords": [
+    "i18n",
+    "translation",
+    "next.js",
+    "express",
+    "fetch",
+    "handler"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonjoker/glot-manager.git",
+    "directory": "packages/server"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
