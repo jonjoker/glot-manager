@@ -14,7 +14,7 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "test:logic": "node --test packages/core/test packages/server/test packages/openai/test packages/anthropic/test packages/postgres/test",
+    "test:logic": "node --test packages/core/test packages/server/test packages/openai/test packages/anthropic/test packages/postgres/test packages/git/test",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
