@@ -1,0 +1,89 @@
+{
+  "name": "@glot-manager/git",
+  "version": "0.1.0",
+  "description": "Git sync for Glot Manager — import translation files from a repo into a store, edit in context, and publish changed keys back as a commit or pull request.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "glot-manager-dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./github": {
+      "glot-manager-dev": "./src/backends/github.ts",
+      "import": {
+        "types": "./dist/backends/github.d.ts",
+        "default": "./dist/backends/github.js"
+      },
+      "require": {
+        "types": "./dist/backends/github.d.cts",
+        "default": "./dist/backends/github.cjs"
+      }
+    },
+    "./system": {
+      "glot-manager-dev": "./src/backends/system.ts",
+      "import": {
+        "types": "./dist/backends/system.d.ts",
+        "default": "./dist/backends/system.js"
+      },
+      "require": {
+        "types": "./dist/backends/system.d.cts",
+        "default": "./dist/backends/system.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=glot-manager-dev --test \"test/*.test.ts\""
+  },
+  "dependencies": {
+    "@glot-manager/core": "^0.1.0"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "translation",
+    "localization",
+    "l10n",
+    "git",
+    "github",
+    "sync",
+    "glot",
+    "glot-manager"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonjoker/glot-manager.git",
+    "directory": "packages/git"
+  },
+  "homepage": "https://github.com/jonjoker/glot-manager/tree/main/packages/git#readme",
+  "bugs": {
+    "url": "https://github.com/jonjoker/glot-manager/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

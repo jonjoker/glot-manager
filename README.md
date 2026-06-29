@@ -154,6 +154,7 @@ hit **Auto translate**, **Save**. Everyone else sees a normal page.
 | [`@glot/anthropic`](./packages/anthropic) | Claude translation provider (structured output, glossary-aware).                                                | `@anthropic-ai/sdk` (peer) |
 | [`@glot/openai`](./packages/openai)       | OpenAI translation provider.                                                                                    | `openai` (peer)            |
 | [`@glot/postgres`](./packages/postgres)   | Postgres `TranslationStore` for any node-postgres-compatible client.                                            | `pg` (optional peer)       |
+| [`@glot/git`](./packages/git)             | Import language files from a git repo, edit in context, publish changes back as a commit/PR (GitHub + system-git backends). | `@glot/core`               |
 
 ---
 
@@ -225,7 +226,7 @@ Glot Manager is built defense-in-depth (details in [docs/security.md](./docs/sec
 - [Architecture](./docs/architecture.md)
 - [React client](./docs/react.md) · [Server handler](./docs/server.md)
 - [Providers & the LLM engine](./docs/providers.md) · [Glossary & context](./docs/glossary-and-context.md)
-- [Stores](./docs/stores.md) · [Self-hosting](./docs/self-hosting.md)
+- [Stores](./docs/stores.md) · [Git sync](./docs/git.md) · [Self-hosting](./docs/self-hosting.md)
 - [Security](./docs/security.md) · [FAQ](./docs/faq.md)
 
 ## Contributing
